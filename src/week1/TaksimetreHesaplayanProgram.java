@@ -13,7 +13,7 @@ public class TaksimetreHesaplayanProgram {
         double tutar,toplamtutar;
         int mesafe , acilisUcreti = 10;
 
-        //Degiskenlere değer atayalim.
+        //Degiskenlere deger atayalim.
         System.out.print("Gidilen Mesafeyi Giriniz (KM) : ");
         mesafe = x.nextInt();
         tutar = (mesafe * 2.20) + acilisUcreti;
