@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class NotOrtalamasiHesaplayanProgram {
     public static void main(String[] args) {
 
-        //Scanner sinifimizi oluşturup ve x adında degişkenken tanimladim.
+        //Scanner sinifimizi oluşturup ve x adında nesne tanimladim.
         Scanner x = new Scanner(System.in);
 
         // Değişkenleri oluştur.
