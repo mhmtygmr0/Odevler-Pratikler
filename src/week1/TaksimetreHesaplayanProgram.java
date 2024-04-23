@@ -10,14 +10,16 @@ public class TaksimetreHesaplayanProgram {
         Scanner x = new Scanner(System.in);
 
         //Degiskenlerimizi olusturalim.
-        double tutar,toplamtutar;
-        int mesafe , acilisUcreti = 10;
+        double tutar;
+        int km , acilisUcreti = 10;
 
         //Degiskenlere deger atayalim.
         System.out.print("Gidilen Mesafeyi Giriniz (KM) : ");
-        mesafe = x.nextInt();
-        tutar = (mesafe * 2.20) + acilisUcreti;
-        toplamtutar = (tutar<20)? 20 : tutar;
-        System.out.print("Ödeyeceğiniz Toplam Tutar = " + toplamtutar + " TL");
+        km = x.nextInt();
+
+        tutar = (km * 2.20) + acilisUcreti;
+        tutar = (tutar<20)? 20 : tutar;
+
+        System.out.print("Ödeyeceğiniz Toplam Tutar = " + tutar + " TL");
     }
 }
