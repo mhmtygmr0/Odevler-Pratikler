@@ -38,7 +38,7 @@ public class NotOrtalamasiHesaplayanProgram {
         System.out.print( "Ortalamanız : " + ortalama);
 
         //sonuc hesapla ve yazdir (gecti/kaldi).
-        sonuc = (ortalama >= 50.0) ? "Geçti" : "Kaldı" ;
+        sonuc = (ortalama >= 50.0) ? "Sınıfı Geçtiniz" : "Sınıfta Kaldınız" ;
         System.out.print( " ===> " + sonuc);
 
     }
