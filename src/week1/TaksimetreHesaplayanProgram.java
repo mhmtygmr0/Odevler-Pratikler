@@ -18,7 +18,7 @@ public class TaksimetreHesaplayanProgram {
         km = x.nextInt();
 
         tutar = (km * 2.20) + acilisUcreti;
-        tutar = (tutar<20)? 20 : tutar;
+        tutar = (tutar < 20) ? 20 : tutar;
 
         System.out.print("Ödeyeceğiniz Toplam Tutar = " + tutar + " TL");
     }
