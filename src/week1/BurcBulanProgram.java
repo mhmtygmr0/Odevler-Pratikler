@@ -7,13 +7,16 @@ public class BurcBulanProgram {
 
         Scanner x = new Scanner(System.in);
 
+        // Degiskenleri olustur
         int ay , gun;
 
+        // Kullanıcıdan ay ve gün bilgileri al
         System.out.print("Ay Giriniz : ");
         ay = x.nextInt();
         System.out.print("Gün Giriniz : ");
         gun = x.nextInt();
 
+        // Girilen ay ve gün bilgilerine göre burç belirlenir ve ekrana yazdır
         if ((ay == 1 && gun >= 22) || (ay == 2 && gun <= 19)){
             System.out.print("Kova Burcu ");
         } else if ((ay == 2 && gun >= 20) || (ay == 3 && gun <= 20)) {
