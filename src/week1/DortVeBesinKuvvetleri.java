@@ -2,7 +2,7 @@ package week1;
 
 import java.util.Scanner;
 
-public class DortVeBesinKatlari {
+public class DortVeBesinKuvvetleri {
     public static void main(String[] args) {
 
         Scanner x = new Scanner(System.in);
@@ -11,20 +11,20 @@ public class DortVeBesinKatlari {
         System.out.print("Lütfen Bir Sayı Giriniz : ");
         int sayi = x.nextInt();
 
-        // Girilen sayıya kadar olan 4'ün kuvvetleri ekrana yazdır
+        // Girilen sayıya kadar olan 4'ün kuvvetlerini ekrana yazdır
         System.out.print("Girilen sayıya kadar olan 4'ün kuvvetleri : ");
-        for(int i = 1 ; i <= sayi ; i++){
-            if(i % 4 == 0){
-                System.out.print(i + "  ");
-            }
+        for(int i = 1 ; i <= sayi ; i*=4){
+
+            System.out.print(i + "  ");
+
         }
 
-        // Girilen sayıya kadar olan 5'in kuvvetleri ekrana yazdır
+        // Girilen sayıya kadar olan 5'in kuvvetlerini ekrana yazdır
         System.out.print("\nGirilen sayıya kadar olan 5'in kuvvetleri : ");
-        for(int i = 1 ; i <= sayi ; i++){
-            if(i % 5 == 0){
-                System.out.print(i + "  ");
-            }
+        for(int i = 1 ; i <= sayi ; i*=5){
+
+            System.out.print(i + "  ");
+
         }
     }
 }
