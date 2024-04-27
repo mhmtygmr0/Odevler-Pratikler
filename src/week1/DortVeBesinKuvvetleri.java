@@ -13,7 +13,7 @@ public class DortVeBesinKuvvetleri {
 
         // Girilen sayıya kadar olan 4'ün kuvvetlerini ekrana yazdır
         System.out.print("Girilen sayıya kadar olan 4'ün kuvvetleri : ");
-        for(int i = 1 ; i <= sayi ; i*=4){
+        for(int i = 4 ; i <= sayi ; i*=4){
 
             System.out.print(i + "  ");
 
@@ -21,7 +21,7 @@ public class DortVeBesinKuvvetleri {
 
         // Girilen sayıya kadar olan 5'in kuvvetlerini ekrana yazdır
         System.out.print("\nGirilen sayıya kadar olan 5'in kuvvetleri : ");
-        for(int i = 1 ; i <= sayi ; i*=5){
+        for(int i = 5 ; i <= sayi ; i*=5){
 
             System.out.print(i + "  ");
 
