@@ -7,36 +7,40 @@ public class EnBuyukVeEnKucukSayilariBulma {
 
         Scanner x = new Scanner(System.in);
 
-        // Kullanıcıdan sayı degerlerini al
-        System.out.print("Sayıyı Giriniz : ");
-        int s1 = x.nextInt();
-        System.out.print("Sayıyı Giriniz : ");
-        int s2 = x.nextInt();
-        System.out.print("Sayıyı Giriniz : ");
-        int s3 = x.nextInt();
-        System.out.print("Sayıyı Giriniz : ");
-        int s4 = x.nextInt();
-        System.out.print("Sayıyı Giriniz : ");
-        int s5 = x.nextInt();
-        System.out.print("Sayıyı Giriniz : ");
-        int s6 = x.nextInt();
+        // Kullanıcıya kaç tane sayı gireceğini sor
+        System.out.print("Kaç tane sayı gireceksiniz : ");
+        int a = x.nextInt();
 
-        int buyuk , kucuk;
+        // Kullanıcıdan ilk sayıyı al
+        System.out.print("1. Sayıyı giriniz: ");
+        int sayi = x.nextInt();
 
-        buyuk = s1 > s2 ? s1 : s2;
-        buyuk = buyuk > s3 ? buyuk : s3;
-        buyuk = buyuk > s4 ? buyuk : s4;
-        buyuk = buyuk > s5 ? buyuk : s5;
-        buyuk = buyuk > s6 ? buyuk : s6;
-
-        kucuk = s1 < s2 ? s1 : s2;
-        kucuk = kucuk < s3 ? kucuk : s3;
-        kucuk = kucuk < s4 ? kucuk : s4;
-        kucuk = kucuk < s5 ? kucuk : s5;
-        kucuk = kucuk < s6 ? kucuk : s6;
+        int n = 1;          // Kaçıncı sayı olduğunu takip eden değişken
+        int buyuk = sayi;   // En büyük sayıyı tutan değişkeni ilk sayıya eşitliyoruz
+        int kucuk = sayi;   // En küçük sayıyı tutan değişkeni ilk sayıya eşitliyoruz
 
 
+        // Diğer sayıları almak için bir döngü kullanıyoruz
+        for(int i = 1; i <= a-1 ; i++){
+
+            n++;
+            System.out.print(n + ". Sayıyı giriniz: ");
+            sayi = x.nextInt();
+
+            // Girilen sayı, en büyük sayıdan büyükse, en büyük sayıyı güncelliyoruz
+            if (sayi >= buyuk){
+                buyuk = sayi;
+            }
+            // Girilen sayı, en küçük sayıdan küçükse, en küçük sayıyı güncelliyoruz
+            if (sayi < kucuk){
+                kucuk = sayi;
+            }
+
+        }
+
+        // Sonuçlar ekrana yazdır
         System.out.println("En büyük sayı : " + buyuk);
         System.out.println("En küçük sayı : " + kucuk);
+
     }
 }
