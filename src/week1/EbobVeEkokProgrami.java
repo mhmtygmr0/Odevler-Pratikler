@@ -17,20 +17,22 @@ public class EbobVeEkokProgrami {
         int sayi = sayi1 > sayi2 ? sayi2 : sayi1;
 
         int ebob = 0;
-        int ekok ;
+        int ekok = 0;
         int a = 0;
 
         // EBOB'u hesapla
         while (a <= sayi) {
+
             a++;
+
             if (sayi1 % a == 0 && sayi2 % a == 0) {
                 ebob = a;
             }
+
+            // EKOK'u hesapla
+            ekok = (sayi1 * sayi2 ) / ebob;
+
         }
-
-        // EKOK'u hesapla
-        ekok = (sayi1 * sayi2 ) / ebob;
-
 
         // Sonuçlari ekrana yazdır
         System.out.println("EBOB (" + sayi1 + "," + sayi2 + ") = "  + ebob);
