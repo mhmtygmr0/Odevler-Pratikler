@@ -16,15 +16,17 @@ public class EbobVeEkokProgrami {
         // Küçük olan sayıyı bul
         int sayi = sayi1 > sayi2 ? sayi2 : sayi1;
 
+        // degiskenleri tanimla
         int ebob = 0;
         int ekok = 0;
         int a = 0;
 
-        // EBOB'u hesapla
+        // Döngü baslat
         while (a <= sayi) {
 
             a++;
 
+            // EBOB'u hesapla
             if (sayi1 % a == 0 && sayi2 % a == 0) {
                 ebob = a;
             }
