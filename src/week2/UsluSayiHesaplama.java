@@ -16,15 +16,15 @@ public class UsluSayiHesaplama {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner x = new Scanner(System.in);
 
         // Kullanıcıdan taban değerini al
         System.out.print("Taban değeri giriniz: ");
-        int taban = scanner.nextInt();
+        int taban = x.nextInt();
 
         // Kullanıcıdan üs değerini al
         System.out.print("Üs değerini giriniz: ");
-        int us = scanner.nextInt();
+        int us = x.nextInt();
 
         // Üs hesaplama metodu çağır ve sonucu ekrana yazdır
         int sonuc = usHesapla(taban, us);
