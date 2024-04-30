@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class PalindromSayiUygulamasi {
 
     // Fonksiyon, verilen bir sayının palindrom olup olmadığını kontrol eder.
-    static void isPalindrom (int sayi) {
+    static void PalindromMu (int sayi) {
 
         // Degiskenler olusturup ilk degerlerini atıyoruz.
         int ilkSayi = sayi , yeniSayi = 0, sonBasammak;
@@ -38,7 +38,7 @@ public class PalindromSayiUygulamasi {
         int sayi = x.nextInt();
 
         // Palindrom metodunu çagır
-        isPalindrom(sayi);
+        PalindromMu(sayi);
 
     }
 }
