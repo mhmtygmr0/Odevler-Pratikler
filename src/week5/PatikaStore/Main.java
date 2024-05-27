@@ -40,6 +40,7 @@ public class Main {
                     for(Brand b : treeSet){
                         System.out.println(b.getName());
                     }
+                    System.out.println();
                     break;
             }
 
