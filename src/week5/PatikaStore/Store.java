@@ -187,6 +187,7 @@ public class Store {
     public void filterNotebookId() {
         System.out.print("Lütfen Ürün ID Giriniz : ");
         int id = input.nextInt();
+        int count = 0;
 
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println("| ID  | Ürün Adı                  | Fiyat      | Marka      | Depolama   | Ekran      | Kamera   | Pil   | Renk   |");
@@ -195,7 +196,12 @@ public class Store {
         for (Notebook n : notebooks) {
             if (n.getId() == id) {
                 System.out.println(n);
+                count++;
             }
+        }
+
+        if (count == 0) {
+            System.out.println("Aradığnız ID ye ait ürün bulunamamıştır...");
         }
 
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
@@ -205,6 +211,7 @@ public class Store {
     public void filterNotebookBrand() {
         System.out.print("Lütfen Marka Adı Giriniz : ");
         String marka = input.next();
+        int count = 0;
 
         System.out.println("----------------------------------------------------------------------------------------------------");
         System.out.println("| ID  | Ürün Adı                       | Fiyat      | Marka      | Depolama   | Ekran      | RAM   |");
@@ -213,7 +220,12 @@ public class Store {
         for (Notebook notebook : notebooks) {
             if (notebook.getBrandName().equalsIgnoreCase(marka)) {
                 System.out.println(notebook);
+                count++;
             }
+        }
+
+        if (count == 0) {
+            System.out.println("Aradığnız markaya ait ürün bulunamamıştır...");
         }
 
         System.out.println("----------------------------------------------------------------------------------------------------");
@@ -341,6 +353,7 @@ public class Store {
     public void filterPhoneId() {
         System.out.print("Lütfen Ürün ID Giriniz : ");
         int id = input.nextInt();
+        int count = 0;
 
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println("| ID  | Ürün Adı                  | Fiyat      | Marka      | Depolama   | Ekran      | Kamera   | Pil   | Renk   |");
@@ -349,7 +362,12 @@ public class Store {
         for (CellPhone c : phones) {
             if (c.getId() == id) {
                 System.out.println(c);
+                count++;
             }
+        }
+
+        if (count == 0) {
+            System.out.println("Aradığnız ID ye ait ürün bulunamamıştır...");
         }
 
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
@@ -359,6 +377,7 @@ public class Store {
     public void filterPhoneBrand() {
         System.out.print("Lütfen Marka Adı Giriniz : ");
         String marka = input.next();
+        int count = 0;
 
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println("| ID  | Ürün Adı                  | Fiyat      | Marka      | Depolama   | Ekran      | Kamera   | Pil   | Renk   |");
@@ -367,7 +386,12 @@ public class Store {
         for (CellPhone c : phones) {
             if (c.getBrandName().equalsIgnoreCase(marka)) {
                 System.out.println(c);
+                count++;
             }
+        }
+
+        if (count == 0) {
+            System.out.println("Aradığnız markaya ait ürün bulunamamıştır...");
         }
 
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
