@@ -3,12 +3,34 @@ package week5.PatikaStore;
 import java.util.*;
 
 public class Store {
+    Scanner input = new Scanner(System.in);
+
     ArrayList<Notebook> notebooks = new ArrayList<>();
     ArrayList<CellPhone> phones = new ArrayList<>();
 
-    Scanner input = new Scanner(System.in);
-
+    boolean store = true;
     int selection;
+
+    public void homePage() {
+        while (store) {
+            selectionScreen();
+            switch (selection) {
+                case 0:
+                    System.out.println("Yine Bekleriz...");
+                    store = false;
+                    break;
+                case 1:
+                    notebook();
+                    break;
+                case 2:
+                    phone();
+                    break;
+                case 3:
+                    brand();
+                    break;
+            }
+        }
+    }
 
     public void selectionScreen() {
         System.out.println("PatikaStore Ürün Yönetim Paneli !");
@@ -24,6 +46,26 @@ public class Store {
             System.out.print("Hatalı Tercih !!! Tekrar Giriniz : ");
             selection = input.nextInt();
         }
+    }
+
+    public void brand() {
+        TreeSet<Brand> treeSet = new TreeSet<>();
+        treeSet.add(new Brand(1, "Apple"));
+        treeSet.add(new Brand(2, "Asus"));
+        treeSet.add(new Brand(3, "Casper"));
+        treeSet.add(new Brand(4, "HP"));
+        treeSet.add(new Brand(5, "Huawei"));
+        treeSet.add(new Brand(6, "Lenovo"));
+        treeSet.add(new Brand(7, "Monster"));
+        treeSet.add(new Brand(8, "Samsung"));
+        treeSet.add(new Brand(9, "Xiaomi"));
+
+        System.out.println("\nMarkalarımız");
+        System.out.println("------------");
+        for (Brand b : treeSet) {
+            System.out.println(b.getName());
+        }
+        System.out.println();
     }
 
     public void notebook() {
@@ -48,7 +90,7 @@ public class Store {
 
         boolean selection = true;
         while (selection) {
-            Main.store = false;
+            store = false;
 
             System.out.println("\nNotebook İşlemleri");
             System.out.println("1 - Ürün Ekle");
@@ -67,7 +109,7 @@ public class Store {
             switch (secim) {
                 case 0:
                     selection = false;
-                    Main.store = true;
+                    store = true;
                     System.out.println();
                     break;
                 case 1:
@@ -160,7 +202,7 @@ public class Store {
 
         boolean selection = true;
         while (selection) {
-            Main.store = false;
+            store = false;
 
             System.out.println("\nTelefon İşlemleri");
             System.out.println("1 - Ürün Ekle");
@@ -179,7 +221,7 @@ public class Store {
             switch (secim) {
                 case 0:
                     selection = false;
-                    Main.store = true;
+                    store = true;
                     System.out.println();
                     break;
                 case 1:
