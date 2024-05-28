@@ -8,10 +8,19 @@ public class Store {
     ArrayList<Notebook> notebooks = new ArrayList<>();
     ArrayList<CellPhone> phones = new ArrayList<>();
 
+
     boolean store = true;
     int selection;
 
     public void homePage() {
+        notebooks.add(new Notebook(1, "HUAWEI Matebook 14", "7000.0", "Huawei", "512", "14.0", "16"));
+        notebooks.add(new Notebook(2, "LENOVO V14 IGL", "3699.0", "Lenovo", "1024", "14.0", "8"));
+        notebooks.add(new Notebook(3, "ASUS Tuf Gaming", "8199.0", "Asus", "2048", "15.6", "32"));
+
+        phones.add(new CellPhone(1, "SAMSUNG GALAXY A51", "3199.0", "Samsung", "128", "6.5", "6", "32", "4500", "Siyah"));
+        phones.add(new CellPhone(2, "iPhone 11 64 GB", "7379.0", "Apple", "64", "6.1", "6", "5", "4500", "Mavi"));
+        phones.add(new CellPhone(3, "Redmi Note 10 Pro 8GB", "4012.0", "Xiaomi", "128", "6.5", "12", "35", "4500", "Beyaz"));
+
         while (store) {
             selectionScreen();
             switch (selection) {
@@ -69,10 +78,6 @@ public class Store {
     }
 
     public void notebook() {
-        notebooks.add(new Notebook(1, "HUAWEI Matebook 14", "7000.0", "Huawei", "512", "14.0", "16"));
-        notebooks.add(new Notebook(2, "LENOVO V14 IGL", "3699.0", "Lenovo", "1024", "14.0", "8"));
-        notebooks.add(new Notebook(3, "ASUS Tuf Gaming", "8199.0", "Asus", "2048", "15.6", "32"));
-
         System.out.println("\nNotebook Listesi\n");
         System.out.println("----------------------------------------------------------------------------------------------------");
         System.out.println("| ID  | Ürün Adı                       | Fiyat      | Marka      | Depolama   | Ekran      | RAM   |");
@@ -126,7 +131,7 @@ public class Store {
     }
 
     public void addNotebook() {
-        int id = notebooks.size() + 1;
+        int id = notebooks.getLast().getId() + 1;
 
         System.out.print("Ürün Adı : ");
         String urunAdi = input.next();
@@ -161,6 +166,43 @@ public class Store {
     }
 
     public void filterNotebook() {
+        System.out.println("1 - ID ye Göre Filtrele");
+        System.out.println("2 - Markaya ye Göre Filtrele");
+        System.out.print("Tercihiniz : ");
+        int tercih = input.nextInt();
+
+        switch (tercih) {
+            case 1:
+                filterNotebookId();
+                break;
+            case 2:
+                filterNotebookBrand();
+                break;
+            default:
+                System.out.println("Hatalı Tercih!!!");
+                break;
+        }
+    }
+
+    public void filterNotebookId() {
+        System.out.print("Lütfen Ürün ID Giriniz : ");
+        int id = input.nextInt();
+
+        System.out.println("-------------------------------------------------------------------------------------------------------------------");
+        System.out.println("| ID  | Ürün Adı                  | Fiyat      | Marka      | Depolama   | Ekran      | Kamera   | Pil   | Renk   |");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------");
+
+        for (Notebook n : notebooks) {
+            if (n.getId() == id) {
+                System.out.println(n);
+            }
+        }
+
+        System.out.println("-------------------------------------------------------------------------------------------------------------------");
+
+    }
+
+    public void filterNotebookBrand() {
         System.out.print("Lütfen Marka Adı Giriniz : ");
         String marka = input.next();
 
@@ -179,10 +221,6 @@ public class Store {
     }
 
     public void phone() {
-        phones.add(new CellPhone(1, "SAMSUNG GALAXY A51", "3199.0", "Samsung", "128", "6.5", "6", "32", "4500", "Siyah"));
-        phones.add(new CellPhone(2, "iPhone 11 64 GB", "7379.0", "Apple", "64", "6.1", "6", "5", "4500", "Mavi"));
-        phones.add(new CellPhone(3, "Redmi Note 10 Pro 8GB", "4012.0", "Xiaomi", "128", "6.5", "12", "35", "4500", "Beyaz"));
-
         System.out.println("\nCep Telefonu Listesi\n");
         System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println("| ID  | Ürün Adı                  | Fiyat      | Marka      | Depolama   | Ekran      | Kamera   | Pil   | Renk   |");
@@ -238,7 +276,7 @@ public class Store {
     }
 
     public void addPhone() {
-        int id = phones.size() + 1;
+        int id = phones.getLast().getId() + 1;
 
         System.out.print("Ürün Adı : ");
         String urunAdi = input.next();
@@ -282,6 +320,43 @@ public class Store {
     }
 
     public void filterPhone() {
+        System.out.println("1 - ID ye Göre Filtrele");
+        System.out.println("2 - Markaya ye Göre Filtrele");
+        System.out.print("Tercihiniz : ");
+        int tercih = input.nextInt();
+
+        switch (tercih) {
+            case 1:
+                filterPhoneId();
+                break;
+            case 2:
+                filterPhoneBrand();
+                break;
+            default:
+                System.out.println("Hatalı Tercih!!!");
+                break;
+        }
+    }
+
+    public void filterPhoneId() {
+        System.out.print("Lütfen Ürün ID Giriniz : ");
+        int id = input.nextInt();
+
+        System.out.println("-------------------------------------------------------------------------------------------------------------------");
+        System.out.println("| ID  | Ürün Adı                  | Fiyat      | Marka      | Depolama   | Ekran      | Kamera   | Pil   | Renk   |");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------");
+
+        for (CellPhone c : phones) {
+            if (c.getId() == id) {
+                System.out.println(c);
+            }
+        }
+
+        System.out.println("-------------------------------------------------------------------------------------------------------------------");
+
+    }
+
+    public void filterPhoneBrand() {
         System.out.print("Lütfen Marka Adı Giriniz : ");
         String marka = input.next();
 
