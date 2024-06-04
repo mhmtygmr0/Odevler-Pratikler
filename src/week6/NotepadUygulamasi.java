@@ -9,13 +9,13 @@ public class NotepadUygulamasi {
         // Kullanıcıdan veri almak için tarayıcı nesnesi
         Scanner input = new Scanner(System.in);
 
-        String file = "notepad";
+        String filePath = "notepad";
 
         // Önceden kaydedilmiş metni gösteren mesaj
         System.out.println("EN SON KAYDEDİLEN METİN ");
 
         // "notepad" dosyasından okumak için FileReader
-        FileReader fileReader = new FileReader(file);
+        FileReader fileReader = new FileReader(filePath);
 
         // Satır satır okumak için BufferedReader
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -34,7 +34,7 @@ public class NotepadUygulamasi {
         // Dosya yazma hatalarını ele almak için try-catch bloğu
         try {
             // "notepad" dosyasına yazmak için FileOutputStream
-            FileOutputStream output = new FileOutputStream(file);
+            FileOutputStream output = new FileOutputStream(filePath);
 
             // Yazma için metin dizesini baytlara dönüştür
             byte[] bytes = text.getBytes();
