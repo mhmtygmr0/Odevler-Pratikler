@@ -23,13 +23,16 @@ public class VeriTabaniUygulamasi {
             ResultSet data = st.executeQuery(sql); // Sorgu çalıştırılır ve sonuçlar alınır
 
             // Sonuçlar üzerinde gezinilir ve her bir satır ekrana yazdırılır
+            System.out.println("| ID | Name           | Position           | Salary     |");
+            System.out.println("+----+----------------+--------------------+------------+");
             while (data.next()) {
-                System.out.print("ID :" + data.getInt("id") + "\t\t");
-                System.out.print("Adı : " + data.getString("name") + "\t\t");
-                System.out.print("Pozisyonu : " + data.getString("position") + "\t\t");
-                System.out.println("Maaşı : " + data.getBigDecimal("salary") + "\t\t");
-                System.out.println("#############################################################");
+                System.out.format("| %-2d | %-14s | %-18s | %-10s |\n",
+                        data.getInt("id"),
+                        data.getString("name"),
+                        data.getString("position"),
+                        data.getBigDecimal("salary"));
             }
+            System.out.println("+----+----------------+--------------------+------------+");
 
             // Kullanılan kaynaklar kapatılır
             st.close();
